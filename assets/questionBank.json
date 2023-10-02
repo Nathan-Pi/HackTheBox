@@ -1,10 +1,12 @@
 {
     "question": [ 
-            "What is 1+1?",
-            "What is 1-1?"
+            "What is 233 in 8-bit binary",
+            "What is the square root of 196?",
+            "What is the minimum file size (in bits) of a 64x64 pixel image with a colour depth of 16 bits"
         ],
     "answer": [ 
-            2,
-            0 
+            11101001,
+            14,
+            65536 
         ]
 }
