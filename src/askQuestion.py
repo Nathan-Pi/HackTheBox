@@ -15,9 +15,33 @@ def askQuestion():
     
     print(questionBank['question'][randomNumber])
     accessedNumbers.append(randomNumber)
-    
+    return randomNumber
+
+
+def validateQuestion(questionNum, answer):
+
+    file = open('assets/questionBank.json')
+    questionBank = json.load(file)
+    correctAnswer = questionBank['question'][questionNum]
+
+    if isinstance(answer, int):
+        pass
+    else:
+        answer = answer.upper()
+        answer = answer.strip()
+        correctAnswer = correctAnswer.upper()
+        correctAnswer = correctAnswer.strip()
+
+
+    if answer == correctAnswer:
+        print("Correct!")
+    else:
+        print("Incorrect!")
+
+
+
 def answer():
     answer = input("Answer: ")
     return answer
 
-askQuestion()
+
