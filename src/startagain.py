@@ -1,10 +1,10 @@
-def StartAgain():
-    choice= int(input("1 To start again, Or 2 to end the game."))
+
+def startAgain():
+    choice= int(input("Would you like to:\n"))
     if choice == 1:
-        main()
+        return 1
     elif choice == 2:
-        print("Quitting..")
-        quit()
+        return 2
     else:
         print("Invalid Input")
-        StartAgain()
+        startAgain()
