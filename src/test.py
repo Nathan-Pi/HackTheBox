@@ -1,1 +1,1 @@
-print("hi")
+name = "paul"
