@@ -1,8 +1,14 @@
 import askQuestion
 import startAgain
+import screens
 
 
 def main():
+
+    startScreen = screens.startScreen()
+    startScreen.display()
+    username = startScreen.start()
+
     correctTry = 0
     incorrectTry = 0
 

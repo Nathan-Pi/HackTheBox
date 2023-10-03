@@ -69,8 +69,3 @@ class startScreen(Screen):
                 quit()
             else:
                 print("Invalid Input")
-
-
-x = startScreen()
-x.display()
-print(x.start())
