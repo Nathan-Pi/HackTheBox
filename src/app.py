@@ -12,3 +12,5 @@ def main():
     else:
         quit()
 
+
+main()

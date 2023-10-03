@@ -1,6 +1,6 @@
 
 def startAgain():
-    choice= int(input("Would you like to:\n"))
+    choice= int(input("Would you like to:\n1) Start Again \n or \n2) End Game\n: "))
     if choice == 1:
         return 1
     elif choice == 2:
