@@ -5,20 +5,27 @@ import startAgain
 def main():
     correctTry = 0
     incorrectTry = 0
+    accessedNumbers = []
 
-    while correctTry <= 3 and incorrectTry <= 3:
-        questionNum = askQuestion.askQuestion()
+
+    numOfDigits = askQuestion.difficultyChoice()
+    numOfDigits += 2
+
+    code = askQuestion.generateCode(numOfDigits)
+
+
+    while correctTry < numOfDigits and incorrectTry < 4:
+        questionNum = askQuestion.askQuestion(accessedNumbers)
         answer = askQuestion.getAnswer()
-        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry)
+        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry, code)
         if isCorrect == True:
             correctTry += 1
         elif isCorrect == False:
             incorrectTry += 1
-        print(correctTry, incorrectTry)
 
-    if correctTry == 3:
-        print("win")
-    elif incorrectTry == 3:
+    if correctTry == numOfDigits:
+        askQuestion.codeEntry(code)
+    elif incorrectTry == numOfDigits:
         print("lose")
 
     if startAgain.startAgain() == 1:
