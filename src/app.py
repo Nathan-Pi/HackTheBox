@@ -1,8 +1,14 @@
 import askQuestion
 import startAgain
+import screens
 
 
 def main():
+
+    startScreen = screens.startScreen()
+    startScreen.display()
+    username = startScreen.start()
+
     correctTry = 0
     incorrectTry = 0
     accessedNumbers = []
@@ -17,10 +23,10 @@ def main():
     while correctTry < numOfDigits and incorrectTry < 4:
         questionNum = askQuestion.askQuestion(accessedNumbers)
         answer = askQuestion.getAnswer()
-        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry, code)
-        if isCorrect == True:
+        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry)
+        if isCorrect is True:
             correctTry += 1
-        elif isCorrect == False:
+        elif isCorrect is False:
             incorrectTry += 1
 
     if correctTry == numOfDigits:
