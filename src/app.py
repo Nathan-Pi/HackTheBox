@@ -9,7 +9,11 @@ def main():
     while correctTry <= 3 and incorrectTry <= 3:
         questionNum = askQuestion.askQuestion()
         answer = askQuestion.getAnswer()
-        askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry)
+        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry)
+        if isCorrect == True:
+            correctTry += 1
+        elif isCorrect == False:
+            incorrectTry += 1
         print(correctTry, incorrectTry)
 
     if correctTry == 3:

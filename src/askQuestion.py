@@ -36,14 +36,15 @@ def validateAnswer(questionNum, answer, correctTry, incorrectTry):
         print("Correct!")
         t.sleep(2)
         correctTry += 1
-        return correctTry
+        return True
     else:
         print("Incorrect!")
         incorrectTry += 1
         print("The correct answer was: ", correctAnswer)
         print('-'*40)
         t.sleep(2)
-        return incorrectTry
+        return False
+    
     
 
 
