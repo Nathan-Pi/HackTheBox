@@ -10,9 +10,9 @@ def main():
         questionNum = askQuestion.askQuestion()
         answer = askQuestion.getAnswer()
         isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry)
-        if isCorrect == True:
+        if isCorrect is True:
             correctTry += 1
-        elif isCorrect == False:
+        elif isCorrect is False:
             incorrectTry += 1
         print(correctTry, incorrectTry)
 
