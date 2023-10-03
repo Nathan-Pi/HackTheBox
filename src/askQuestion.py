@@ -40,7 +40,7 @@ def validateAnswer(questionNum, answer):
 def getAnswer():
     try:
         answer = input("Answer: ")
-    except:
+    except Exception:
         print("Error")
 
     return answer
