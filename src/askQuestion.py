@@ -1,9 +1,11 @@
 import json
 import random
-import time
+import time as t
+
 def askQuestion():
     accessedNumbers = []
     same = True
+
     file = open('assets/questionBank.json')
     questionBank = json.load(file)
 
@@ -19,7 +21,7 @@ def askQuestion():
     return randomNumber
 
 
-def validateAnswer(questionNum, answer):
+def validateAnswer(questionNum, answer, correctTry, incorrectTry):
 
     file = open('assets/questionBank.json')
     questionBank = json.load(file)
@@ -32,8 +34,17 @@ def validateAnswer(questionNum, answer):
     
     if answer == correctAnswer:
         print("Correct!")
+        t.sleep(2)
+        correctTry += 1
+        return True
     else:
         print("Incorrect!")
+        incorrectTry += 1
+        print("The correct answer was: ", correctAnswer)
+        print('-'*40)
+        t.sleep(2)
+        return False
+    
     
 
 
