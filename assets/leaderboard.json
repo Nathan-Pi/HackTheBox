@@ -2,11 +2,15 @@
     "leaderboard": [
         {
             "name": "test",
-            "score": "100"
+            "score": 100
         },
         {
             "name": "test2",
-            "score": "110"
+            "score": 110
+        },
+        {
+            "name": "test3",
+            "score": 200
         }
     ]
 }
