@@ -1,5 +1,6 @@
 import json
 import random
+import time
 def askQuestion():
     accessedNumbers = []
     same = True
@@ -8,7 +9,7 @@ def askQuestion():
 
     count = len(questionBank['question'])
     while same == True:
-        randomNumber = random.randint(0,count)
+        randomNumber = random.randint(0,count-1)
         if randomNumber not in accessedNumbers:
             same = False 
 
@@ -18,30 +19,30 @@ def askQuestion():
     return randomNumber
 
 
-def validateQuestion(questionNum, answer):
+def validateAnswer(questionNum, answer):
 
     file = open('assets/questionBank.json')
     questionBank = json.load(file)
-    correctAnswer = questionBank['question'][questionNum]
+    correctAnswer = questionBank['answer'][questionNum]
+ 
 
-    if isinstance(answer, int):
-        pass
-    else:
-        answer = answer.upper()
-        answer = answer.strip()
-        correctAnswer = correctAnswer.upper()
-        correctAnswer = correctAnswer.strip()
+    answer = str(answer)
+    correctAnswer = str(correctAnswer)
 
-
+    
     if answer == correctAnswer:
         print("Correct!")
     else:
         print("Incorrect!")
+    
 
 
+def getAnswer():
+    try:
+        answer = input("Answer: ")
+    except:
+        print("Error")
 
-def answer():
-    answer = input("Answer: ")
     return answer
 
 
