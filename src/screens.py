@@ -3,12 +3,13 @@ import os
 
 
 class Screen:
+
     def __init__(self, displayText="", inputRequired=False) -> None:
         self.logo = '''
   _    _            _      _______ _             _____        __     
  | |  | |          | |    |__   __| |           / ____|      / _|    
  | |__| | __ _  ___| | __    | |  | |__   ___  | (___   __ _| |_ ___ 
- |  __  |/ _` |/ __| |/ /    | |  | '_ \ / _ \  \___ \ / _` |  _/ _ \
+ |  __  |/ _` |/ __| |/ /    | |  | '_ \ / _ \  \___ \ / _` |  _/ _ |
  | |  | | (_| | (__|   <     | |  | | | |  __/  ____) | (_| | ||  __/
  |_|  |_|\__,_|\___|_|\_\    |_|  |_| |_|\___| |_____/ \__,_|_| \___|
         '''
@@ -39,6 +40,7 @@ class Screen:
 
 
 class startScreen(Screen):
+
     def __init__(self, entries=10) -> None:
         Screen.__init__(self)
         self.leaderboard = []
@@ -56,9 +58,9 @@ class startScreen(Screen):
     def showLeaderboard(self) -> None:
         print(self.leaderboard)
 
-    def x(self):
+    def start(self):
         while True:
-            choice = int(input("\n1 to start, or 2 to quit."))
+            choice = int(input("1 to start, or 2 to quit: "))
             if choice == 1:
                 name = str(input("Enter a name: "))
                 return name
@@ -68,3 +70,7 @@ class startScreen(Screen):
             else:
                 print("Invalid Input")
 
+
+x = startScreen()
+x.display()
+print(x.start())
