@@ -8,8 +8,7 @@ import threading as th
 
 
 def main():
-    timer = th.Timer(180, timerr.endTimer)
-    timer.start()
+   
     os.system('cls')
     correctTry = 0
     incorrectTry = 0
@@ -22,6 +21,9 @@ def main():
 
     numOfDigits = askQuestion.difficultyChoice()
     numOfDigits += 2
+
+    timer = th.Timer(5, timerr.endTimer)
+    timer.start()
 
     code = askQuestion.generateCode(numOfDigits)
 

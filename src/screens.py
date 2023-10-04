@@ -40,7 +40,7 @@ class Screen:
 
     def restartOrQuit(self):
         while True:
-            choice = int(input("1 to restart, or 2 to quit: "))
+            choice = int(input("Would you like to \n1) Restart\n2) Quit\n : "))
             if choice == 1:
                 return True
             elif choice == 2:
@@ -71,7 +71,7 @@ class startScreen(Screen):
 
     def start(self):
         while True:
-            choice = int(input("1 to start, or 2 to quit: "))
+            choice = int(input("Would you like to \n1) Start\n2) Quit\n : "))
             if choice == 1:
                 name = str(input("Enter a name: "))
                 return name
