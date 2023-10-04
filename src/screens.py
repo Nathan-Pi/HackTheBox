@@ -102,6 +102,17 @@ class questionScreen(Screen):
         self.correctAnswer = ""
         self.correctTries = 0
         self.incorrectTries = 0
+        self.difficulty = 0
+        self.code = []
+
+    def difficultyChoice(self):
+        difficulty = int(input("Would you to like to play on \n1) Easy\n2) Medium\n3) Hard\n: "))
+        if difficulty not in [1, 2, 3]:
+            print("Invalid Difficulty! Try again")
+            self.difficultyChoice()
+        self.difficulty = difficulty
+        for i in range(self.difficulty + 2):
+            self.code.append(random.randint(1, 9))
 
     def askQuestion(self):
 
@@ -112,13 +123,12 @@ class questionScreen(Screen):
 
         count = len(questionBank['question'])
         while same is True:
-            randomNumber = random.randint(0, count-1)
-            if randomNumber not in self.accessedNumbers:
+            self.questionNum = random.randint(0, count-1)
+            if self.questionNum not in self.accessedNumbers:
                 same = False
 
-        print(questionBank['question'][randomNumber])
-        self.accessedNumbers.append(randomNumber)
-        self.questionNum = randomNumber
+        print(questionBank['question'][self.questionNum])
+        self.accessedNumbers.append(self.questionNum)
 
     def getAnswer(self):
 
@@ -133,20 +143,38 @@ class questionScreen(Screen):
 
         file = open('assets/questionBank.json')
         questionBank = json.load(file)
-        correctAnswer = questionBank['answer'][self.questionNum]
+        self.correctAnswer = questionBank['answer'][self.questionNum]
 
-        self.answer = str(self.answer)
-        self.correctAnswer = str(correctAnswer)
-
-        if self.answer == self.correctAnswer:
+        if str(self.answer).upper() == str(self.correctAnswer).upper():
             print("Correct!")
-            time.sleep(2)
+            print("You have unlocked a new part of the code! : \n\n \t ",
+                  str(self.code[self.correctTries])
+                  .replace('[', '')
+                  .replace(']', ''))
+            time.sleep(1)
             self.correctTries += 1
         else:
             print("Incorrect!")
             self.incorrectTries += 1
-            print("The correct answer was: ", correctAnswer)
-            time.sleep(2)
+            print("The correct answer was: ", self.correctAnswer)
+            time.sleep(1)
+
+    def codeEntry(self):
+        var = ''
+
+        for i in self.code:
+            var += str(i)
+
+        code = int(var)
+        for x in range(3):
+            enteredCode = int(input("Enter the code! (eg 000)\n\n\t:  "))
+            if enteredCode == code:
+                print("Correct!")
+                return True
+            else:
+                print("That's not quite right!")
+        print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
+        return False
 
 
 class loseScreen(Screen):
