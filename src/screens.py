@@ -42,8 +42,7 @@ class Screen:
         while True:
             choice = int(input("1 to restart, or 2 to quit: "))
             if choice == 1:
-                name = str(input("Enter a name: "))
-                return name
+                return True
             elif choice == 2:
                 print("Quitting...")
                 quit()
@@ -66,7 +65,7 @@ class startScreen(Screen):
                                      data["leaderboard"][i]["score"]))
             except Exception:
                 pass
-
+    
     def showLeaderboard(self) -> None:
         print(self.leaderboard)
 
@@ -81,6 +80,10 @@ class startScreen(Screen):
                 quit()
             else:
                 print("Invalid Input")
+
+    def display(self):
+        super().display()
+        self.showLeaderboard()
 
 
 class loseScreen(Screen):
