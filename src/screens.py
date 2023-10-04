@@ -40,7 +40,7 @@ class Screen:
 
     def restartOrQuit(self):
         while True:
-            choice = int(input("1 to restart, or 2 to quit: "))
+            choice = int(input("\n1 to restart, or 2 to quit: "))
             if choice == 1:
                 return True
             elif choice == 2:
@@ -58,20 +58,24 @@ class startScreen(Screen):
         self.entries = entries
         with open('assets/leaderboard.json', "r") as file:
             data = json.load(file)
-        for i in range(self.entries):
-            try:
-                self.leaderboard.append(
-                                    (data["leaderboard"][i]["name"] + ":",
-                                     data["leaderboard"][i]["score"]))
-            except Exception:
-                pass
-    
+        # for i in range(self.entries):
+        #     try:
+        #         self.leaderboard.append(
+        #                             (data["leaderboard"][i]["name"] + ":",
+        #                              data["leaderboard"][i]["score"]))
+        #     except Exception:
+        #         pass
+        self.names = [entry['name'] for entry in data['leaderboard']]
+        self.scores = [entry['score'] for entry in data['leaderboard']]
+
     def showLeaderboard(self) -> None:
-        print(self.leaderboard)
+        print("Leaderboard:")
+        for i in range(len(self.names)):
+            print(f"{i + 1}. {self.names[i]} - {self.scores[i]}")
 
     def start(self):
         while True:
-            choice = int(input("1 to start, or 2 to quit: "))
+            choice = int(input("\n1 to start, or 2 to quit: "))
             if choice == 1:
                 name = str(input("Enter a name: "))
                 return name
