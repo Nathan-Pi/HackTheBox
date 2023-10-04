@@ -32,7 +32,9 @@ def main():
             winScreen.restartOrQuit()
             main()
         else:
-            time.sleep(1)
+            loseScreen = loseScreenCode.loseScreen()
+            loseScreen.display()
+            loseScreen.restartOrQuit()
             main()
 
     # incorrect tries seems to be hardcoded here -ethan
