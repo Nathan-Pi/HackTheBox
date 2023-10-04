@@ -12,8 +12,12 @@
             "Which is the broadcast address in this network: 172.16.24.0/24",
             "In which phase of PICERL is blocking attackers usually done?",
             "What is the default text editor for the Bash shell with a Windows-based Git install?",
-            "Which island is the largest on Earth?"
-
+            "Which island is the largest on Earth?",
+            "What colour is sea?\na) blue  \nb) red",
+            "What is the correct file extension for Python files? \n\na) .pt\n\nb).py\n\nc).pyth\n\nd).poy",
+            "Which of the following, is not a valid python function? \n\na) append()\n\nb) flush()\n\nc) python()\n\nd)write()",
+            "Is Python code compiled, interpreted or both?",
+            "Which keyword is used for functions in Python? \n\na) func \n\nb) Fun\n\nc)Define\n\n d) def"
             
         ],
     "answer": [ 
@@ -29,7 +33,14 @@
             "172.16.24.255",
             "containment",
             "vim",
-            "greenland"
+            "greenland",
+            "a",
+            "b",
+            "c",
+            "both",
+            "d"
+            
+
 
 
             
