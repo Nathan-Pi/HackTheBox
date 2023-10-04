@@ -1,13 +1,8 @@
 import time
-import threading as th
-
-import baseScreen
 import questionScreenCode
 import startScreenCode
 import winScreenCode
-import timerr
 import loseScreenCode
-
 import os
 
 
@@ -20,7 +15,6 @@ def main():
 
     questionScreen = questionScreenCode.questionScreen()
     questionScreen.difficultyChoice()
-
 
     while questionScreen.correctTries < len(questionScreen.code) and questionScreen.incorrectTries < 4:
         questionScreen.askQuestion()

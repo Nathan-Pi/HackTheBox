@@ -1,6 +1,7 @@
 import baseScreen
 import json
 
+
 class startScreen(baseScreen.Screen):
 
     def __init__(self, entries=10) -> None:
@@ -18,6 +19,15 @@ class startScreen(baseScreen.Screen):
         #         pass
         self.names = [entry['name'] for entry in data['leaderboard']]
         self.scores = [entry['score'] for entry in data['leaderboard']]
+        
+        with open('assets/leaderboard.json', "r") as file:
+            data = json.load(file)
+        sorted_leaderboard = sorted(data["leaderboard"], key=lambda x: x["score"], reverse=True)
+
+        sorted_data = {"leaderboard": sorted_leaderboard}
+
+        with open('assets/leaderboard.json', "w") as file:
+            json.dump(sorted_data, file, indent=4)
 
     def showLeaderboard(self) -> None:
         print("Leaderboard:")

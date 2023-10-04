@@ -1,40 +1,12 @@
 {
     "leaderboard": [
         {
-            "name": "test",
-            "score": 100
-        },
-        {
-            "name": "test2",
-            "score": 110
-        },
-        {
-            "name": "test3",
-            "score": 200
-        },
-        {
-            "name": "ethan",
-            "score": 0
-        },
-        {
-            "name": "nathan",
-            "score": 0
-        },
-        {
-            "name": "Hannah",
-            "score": 10
-        },
-        {
-            "name": "Not nathan",
-            "score": 18
-        },
-        {
-            "name": "charlie",
+            "name": "Nathan",
             "score": 21
         },
         {
-            "name": "ethannnn",
-            "score": 7
+            "name": "Ethan",
+            "score": 21
         }
     ]
 }
