@@ -22,7 +22,7 @@ def main():
     while correctTry < numOfDigits and incorrectTry < 4:
         questionNum = askQuestion.askQuestion(accessedNumbers)
         answer = askQuestion.getAnswer()
-        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry)
+        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry, code)
         if isCorrect is True:
             correctTry += 1
         elif isCorrect is False:
