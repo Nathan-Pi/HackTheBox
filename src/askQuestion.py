@@ -16,9 +16,7 @@ def askQuestion(accessedNumbers):
 
     
     print(questionBank['question'][randomNumber])
-    print(randomNumber)
     accessedNumbers.append(randomNumber)
-    print(accessedNumbers)
     return randomNumber
 
 
@@ -34,6 +32,7 @@ def validateAnswer(questionNum, answer, correctTry, incorrectTry, code):
         t.sleep(2)
         correctTry += 1
         print("You have unlocked a new part of the code! : \n\n \t ", str(code[:correctTry]).replace('[', '').replace(']', ''))
+        t.sleep(3)
 
         return True
     else:
@@ -64,6 +63,9 @@ def generateCode(numOfDigits):
 
 def difficultyChoice():
     difficulty = int(input("Would you to like to play on \n1) Easy\n2) Medium\n3) Hard\n: "))
+    if difficulty not in [1,2,3]:
+        print("Invalid Difficulty! Try again")
+        difficultyChoice()
     return difficulty
 
 
@@ -85,4 +87,3 @@ def codeEntry(code):
     print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
     #GO TO A LOSE SCREEN
 
-codeEntry([1, 2, 3, 4, 5])

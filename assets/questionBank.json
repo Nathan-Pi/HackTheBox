@@ -13,7 +13,7 @@
             "In which phase of PICERL is blocking attackers usually done?",
             "What is the default text editor for the Bash shell with a Windows-based Git install?",
             "Which island is the largest on Earth?",
-            "What colour is sea?\n   a) blue  \nb) red",
+            "What colour is sea?\na) blue  \nb) red",
             "What is the correct file extension for Python files? \n\na) .pt\n\nb).py\n\nc).pyth\n\nd).poy",
             "Which of the following, is not a valid python function? \n\na) append()\n\nb) flush()\n\nc) python()\n\nd)write()",
             "Is Python code compiled, interpreted or both?",
@@ -38,7 +38,7 @@
             "b",
             "c",
             "both",
-            "def",
+            "d"
             
 
 
