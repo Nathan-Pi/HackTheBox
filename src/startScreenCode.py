@@ -33,7 +33,7 @@ class startScreen(baseScreen.Screen):
                 else:
                     print("Invalid Input")
             except Exception:
-                print("Not valid")
+                print("Invalid Entry")
                 self.start()
 
     def display(self):

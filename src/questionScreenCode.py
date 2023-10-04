@@ -67,12 +67,12 @@ class questionScreen(baseScreen.Screen):
                   str(self.code[0:self.correctTries])
                   .replace('[', '')
                   .replace(']', ''))
-            time.sleep(1)
+            time.sleep(3)
         else:
             print("Incorrect!")
             self.incorrectTries += 1
             print("The correct answer was: ", self.correctAnswer)
-            time.sleep(1)
+            time.sleep(3)
 
     def codeEntry(self):
         var = ''
@@ -82,12 +82,16 @@ class questionScreen(baseScreen.Screen):
 
         code = int(var)
         for x in range(3):
-            enteredCode = int(input("Enter the code! (eg 000)\n\n\t:  "))
-            if enteredCode == code:
-                print("Correct!")
-                return True
-            else:
-                print("That's not quite right!")
+            try:
+                enteredCode = int(input("Enter the code! (eg. 000)\n\n\t:  "))
+                if enteredCode == code:
+                    print("Correct!")
+                    return True
+                else:
+                    print("That's not quite right!")
+            except Exception:
+                print("Invalid Entry")
+
         print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
         return False
 
