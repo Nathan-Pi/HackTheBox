@@ -13,11 +13,16 @@
             "In which phase of PICERL is blocking attackers usually done?",
             "What is the default text editor for the Bash shell with a Windows-based Git install?",
             "Which island is the largest on Earth?",
-            "What colour is sea?\na) blue  \nb) red",
+            "What colour is red sea?\na) blue  \nb) red",
             "What is the correct file extension for Python files? \n\na) .pt\n\nb).py\n\nc).pyth\n\nd).poy",
             "Which of the following, is not a valid python function? \n\na) append()\n\nb) flush()\n\nc) python()\n\nd)write()",
             "Is Python code compiled, interpreted or both?",
-            "Which keyword is used for functions in Python? \n\na) func \n\nb) Fun\n\nc)Define\n\n d) def"
+            "Which keyword is used for functions in Python? \n\na) func \n\nb) Fun\n\nc)Define\n\n d) def",
+            "What is the scientific name for the python family?",
+            "How long can a python grow? \n\na) 2-3ft\n\nb)3-5ft\n\nc)5-7ft\n\nd)7-10ft",
+            "What is the average lifespan of a python? \n\na) 2-3 years\n\nb) 3-4 years\n\nc) 4-5 years\n\nd) 8-10 years",
+            "Do pythons have venom?",
+            "Where do rainbow pythons live?"
             
         ],
     "answer": [ 
@@ -38,7 +43,12 @@
             "b",
             "c",
             "both",
-            "d"
+            "d",
+            "pythonidae",
+            "d",
+            "c",
+            "no",
+            "rainbows"
             
 
 
