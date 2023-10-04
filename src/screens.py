@@ -1,5 +1,7 @@
 import json
 import os
+import random
+import time
 
 
 class Screen:
@@ -40,7 +42,7 @@ class Screen:
 
     def restartOrQuit(self):
         while True:
-            choice = int(input("1 to restart, or 2 to quit: "))
+            choice = int(input("\n1 to restart, or 2 to quit: "))
             if choice == 1:
                 return True
             elif choice == 2:
@@ -58,20 +60,24 @@ class startScreen(Screen):
         self.entries = entries
         with open('assets/leaderboard.json', "r") as file:
             data = json.load(file)
-        for i in range(self.entries):
-            try:
-                self.leaderboard.append(
-                                    (data["leaderboard"][i]["name"] + ":",
-                                     data["leaderboard"][i]["score"]))
-            except Exception:
-                pass
-    
+        # for i in range(self.entries):
+        #     try:
+        #         self.leaderboard.append(
+        #                             (data["leaderboard"][i]["name"] + ":",
+        #                              data["leaderboard"][i]["score"]))
+        #     except Exception:
+        #         pass
+        self.names = [entry['name'] for entry in data['leaderboard']]
+        self.scores = [entry['score'] for entry in data['leaderboard']]
+
     def showLeaderboard(self) -> None:
-        print(self.leaderboard)
+        print("Leaderboard:")
+        for i in range(len(self.names)):
+            print(f"{i + 1}. {self.names[i]} - {self.scores[i]}")
 
     def start(self):
         while True:
-            choice = int(input("1 to start, or 2 to quit: "))
+            choice = int(input("\n1 to start, or 2 to quit: "))
             if choice == 1:
                 name = str(input("Enter a name: "))
                 return name
@@ -84,6 +90,63 @@ class startScreen(Screen):
     def display(self):
         super().display()
         self.showLeaderboard()
+
+
+class questionScreen(Screen):
+
+    def __init__(self) -> None:
+        Screen.__init__(self)
+        self.accessedNumbers = []
+        self.questionNum = 0
+        self.answer = ""
+        self.correctAnswer = ""
+        self.correctTries = 0
+        self.incorrectTries = 0
+
+    def askQuestion(self):
+
+        same = True
+
+        file = open('assets/questionBank.json')
+        questionBank = json.load(file)
+
+        count = len(questionBank['question'])
+        while same is True:
+            randomNumber = random.randint(0, count-1)
+            if randomNumber not in self.accessedNumbers:
+                same = False
+
+        print(questionBank['question'][randomNumber])
+        self.accessedNumbers.append(randomNumber)
+        self.questionNum = randomNumber
+
+    def getAnswer(self):
+
+        try:
+            userInput = input("Answer: ")
+        except Exception:
+            print("Error")
+
+        self.answer = userInput
+
+    def validateAnswer(self):
+
+        file = open('assets/questionBank.json')
+        questionBank = json.load(file)
+        correctAnswer = questionBank['answer'][self.questionNum]
+
+        self.answer = str(self.answer)
+        self.correctAnswer = str(correctAnswer)
+
+        if self.answer == self.correctAnswer:
+            print("Correct!")
+            time.sleep(2)
+            self.correctTries += 1
+        else:
+            print("Incorrect!")
+            self.incorrectTries += 1
+            print("The correct answer was: ", correctAnswer)
+            time.sleep(2)
 
 
 class loseScreen(Screen):
