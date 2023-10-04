@@ -11,6 +11,10 @@
         {
             "name": "test3",
             "score": 200
+        },
+        {
+            "name": "ethan",
+            "score": 0
         }
     ]
 }

@@ -1,4 +1,4 @@
-import askQuestion
+import time
 import screens
 import os
 
@@ -8,36 +8,31 @@ def main():
     startScreen = screens.startScreen()
     startScreen.display()
     username = startScreen.start()
-    correctTry = 0
-    incorrectTry = 0
-    accessedNumbers = []
     score = 0
 
-    numOfDigits = askQuestion.difficultyChoice()
-    numOfDigits += 2
+    questionScreen = screens.questionScreen()
+    questionScreen.difficultyChoice()
 
-    code = askQuestion.generateCode(numOfDigits)
-
-    while correctTry < numOfDigits and incorrectTry < 4:
-        questionNum = askQuestion.askQuestion(accessedNumbers)
-        answer = askQuestion.getAnswer()
-        isCorrect = askQuestion.validateAnswer(questionNum, answer, correctTry, incorrectTry, code)
-        if isCorrect is True:
-            correctTry += 1
-        elif isCorrect is False:
-            incorrectTry += 1
+    while questionScreen.correctTries < len(questionScreen.code) and questionScreen.incorrectTries < 4:
+        questionScreen.askQuestion()
+        questionScreen.getAnswer()
+        questionScreen.validateAnswer()
         os.system('cls')
 
-    if correctTry == numOfDigits:
-        success = askQuestion.codeEntry(code)
+    if questionScreen.correctTries == len(questionScreen.code):
+        success = questionScreen.codeEntry()
         if success is True:
             winScreen = screens.winScreen()
             winScreen.display()
             winScreen.appendLeaderboard(username, score)
             winScreen.restartOrQuit()
             main()
+        else:
+            time.sleep(1)
+            main()
 
-    elif incorrectTry == 4:
+    # incorrect tries seems to be hardcoded here -ethan
+    elif questionScreen.incorrectTries == 4:
         print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
         loseScreen = screens.loseScreen()
         loseScreen.display()
