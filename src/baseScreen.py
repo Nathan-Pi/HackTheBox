@@ -42,12 +42,16 @@ class Screen:
 
     def restartOrQuit(self):
         while True:
-            choice = int(input("\n1 to restart, or 2 to quit: "))
-            if choice == 1:
-                return True
-            elif choice == 2:
-                print("Quitting...")
-                quit()
-            else:
-                print("Invalid Input")
+            try:
+                choice = int(input("\n1 to restart, or 2 to quit: "))
+                if choice == 1:
+                    return True
+                elif choice == 2:
+                    print("Quitting...")
+                    quit()
+                else:
+                    print("Invalid Input")
+            except Exception:
+                print("Invalid Entry")
+                self.restartOrQuit()
 
