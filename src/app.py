@@ -9,10 +9,10 @@ def main():
     startScreen.display()
     username = startScreen.start()
     score = 0
-    
+
     questionScreen = screens.questionScreen()
     questionScreen.difficultyChoice()
-    
+
     while questionScreen.correctTries < len(questionScreen.code) and questionScreen.incorrectTries < 4:
         questionScreen.askQuestion()
         questionScreen.getAnswer()
