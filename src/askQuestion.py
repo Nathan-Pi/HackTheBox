@@ -81,9 +81,9 @@ def codeEntry(code):
         enteredCode = int(input("Enter the code! (eg 000)\n\n\t:  "))
         if enteredCode == code:
             print("win")
-            return True #WILL LINK TO A WIN SCREEN FROM MAIN FUNC
+            return True  #WILL LINK TO A WIN SCREEN FROM MAIN FUNC
         else:
             print("That's not quite right!")
     print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
-    #GO TO A LOSE SCREEN
+    return False
 
