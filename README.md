@@ -24,7 +24,7 @@ GIVEN: Sets the context. What page are we on and what state are we in? Is the us
 WHEN: What actions the user is performing. What event occurred?
 THEN: What should the system do in response? What is the expected outcome?
 
-** #Git branching good practices**
+# **Git branching good practices**
 https://learn.microsoft.com/en-us/azure/devops/repos/git/git-branching-guidance?view=azure-devops
 
 # HOW TO CREATE PULL REQUEST
