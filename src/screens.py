@@ -57,8 +57,8 @@ class startScreen(Screen):
         Screen.__init__(self)
         self.leaderboard = []
         self.entries = entries
-        file = open('assets/leaderboard.json')
-        data = json.load(file)
+        with open('assets/leaderboard.json', "r") as file:
+            data = json.load(file)
         for i in range(self.entries):
             try:
                 self.leaderboard.append(
