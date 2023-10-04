@@ -7,18 +7,14 @@ class startScreen(baseScreen.Screen):
         baseScreen.Screen.__init__(self)
         self.leaderboard = []
         self.entries = entries
+        nameAndScore = []
         with open('assets/leaderboard.json', "r") as file:
             data = json.load(file)
-        # for i in range(self.entries):
-        #     try:
-        #         self.leaderboard.append(
-        #                             (data["leaderboard"][i]["name"] + ":",
-        #                              data["leaderboard"][i]["score"]))
-        #     except Exception:
-        #         pass
+        
         self.names = [entry['name'] for entry in data['leaderboard']]
         self.scores = [entry['score'] for entry in data['leaderboard']]
 
+        
     def showLeaderboard(self) -> None:
         print("Leaderboard:")
         for i in range(len(self.names)):
