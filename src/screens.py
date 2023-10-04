@@ -84,7 +84,7 @@ class startScreen(Screen):
 
 
 class loseScreen(Screen):
-    
+
     def display(self):
 
         os.system('cls')
