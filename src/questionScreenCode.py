@@ -17,13 +17,17 @@ class questionScreen(baseScreen.Screen):
         self.code = []
 
     def difficultyChoice(self):
-        difficulty = int(input("Would you to like to play on \n1) Easy\n2) Medium\n3) Hard\n: "))
-        if difficulty not in [1, 2, 3]:
-            print("Invalid Difficulty! Try again")
+        try:
+            difficulty = int(input("Would you to like to play on \n1) Easy\n2) Medium\n3) Hard\n: "))
+            if difficulty not in [1, 2, 3]:
+                print("Invalid Difficulty! Try again")
+                self.difficultyChoice()
+            self.difficulty = difficulty
+            for i in range(self.difficulty + 2):
+                self.code.append(random.randint(1, 9))
+        except Exception:
+            print("Invalid Entry")
             self.difficultyChoice()
-        self.difficulty = difficulty
-        for i in range(self.difficulty + 2):
-            self.code.append(random.randint(1, 9))
 
     def askQuestion(self):
 

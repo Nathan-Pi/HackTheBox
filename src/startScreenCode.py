@@ -22,15 +22,19 @@ class startScreen(baseScreen.Screen):
 
     def start(self):
         while True:
-            choice = int(input("\n1 to start, or 2 to quit: "))
-            if choice == 1:
-                name = str(input("Enter a name: "))
-                return name
-            elif choice == 2:
-                print("Quitting...")
-                quit()
-            else:
-                print("Invalid Input")
+            try:
+                choice = int(input("\n1 to start, or 2 to quit: "))
+                if choice == 1:
+                    name = str(input("Enter a name: "))
+                    return name
+                elif choice == 2:
+                    print("Quitting...")
+                    quit()
+                else:
+                    print("Invalid Input")
+            except Exception:
+                print("Not valid")
+                self.start()
 
     def display(self):
         super().display()
