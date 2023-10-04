@@ -1,15 +1,17 @@
 import os
 import screens
-import time as t
-
+import time
+import threading
 
 def endTimer():
     os.system('cls')
     print("You ran out of time!")
-    t.sleep(2)
+    time.sleep(2)
 
     loseScreen = screens.loseScreen()
     loseScreen.display()
+    print("hel")
     loseScreen.restartOrQuit()
+
 
 
