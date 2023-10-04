@@ -1,5 +1,5 @@
 import baseScreen
-import random 
+import random
 import json
 import time
 
@@ -86,7 +86,3 @@ class questionScreen(baseScreen.Screen):
                 print("That's not quite right!")
         print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
         return False
-
-    def killQuestion(self):
-        del questionScreen
-        
