@@ -17,13 +17,17 @@ class questionScreen(baseScreen.Screen):
         self.code = []
 
     def difficultyChoice(self):
-        difficulty = int(input("Would you to like to play on \n1) Easy\n2) Medium\n3) Hard\n: "))
-        if difficulty not in [1, 2, 3]:
-            print("Invalid Difficulty! Try again")
+        try:
+            difficulty = int(input("Would you to like to play on \n1) Easy\n2) Medium\n3) Hard\n: "))
+            if difficulty not in [1, 2, 3]:
+                print("Invalid Difficulty! Try again")
+                self.difficultyChoice()
+            self.difficulty = difficulty
+            for i in range(self.difficulty + 2):
+                self.code.append(random.randint(1, 9))
+        except Exception:
+            print("Invalid Entry")
             self.difficultyChoice()
-        self.difficulty = difficulty
-        for i in range(self.difficulty + 2):
-            self.code.append(random.randint(1, 9))
 
     def askQuestion(self):
 
@@ -63,12 +67,12 @@ class questionScreen(baseScreen.Screen):
                   str(self.code[0:self.correctTries])
                   .replace('[', '')
                   .replace(']', ''))
-            time.sleep(1)
+            time.sleep(3)
         else:
             print("Incorrect!")
             self.incorrectTries += 1
             print("The correct answer was: ", self.correctAnswer)
-            time.sleep(1)
+            time.sleep(3)
 
     def codeEntry(self):
         var = ''
@@ -78,12 +82,16 @@ class questionScreen(baseScreen.Screen):
 
         code = int(var)
         for x in range(3):
-            enteredCode = int(input("Enter the code! (eg 000)\n\n\t:  "))
-            if enteredCode == code:
-                print("Correct!")
-                return True
-            else:
-                print("That's not quite right!")
+            try:
+                enteredCode = int(input("Enter the code! (eg. 000)\n\n\t:  "))
+                if enteredCode == code:
+                    print("Correct!")
+                    return True
+                else:
+                    print("That's not quite right!")
+            except Exception:
+                print("Invalid Entry")
+
         print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
         return False
 
