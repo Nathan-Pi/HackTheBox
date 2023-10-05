@@ -67,7 +67,7 @@ class questionScreen(baseScreen.Screen):
                   str(self.code[0:self.correctTries])
                   .replace('[', '')
                   .replace(']', ''))
-            time.sleep(1)
+            time.sleep(3)
         else:
             print("Incorrect!")
             self.incorrectTries += 1

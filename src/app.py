@@ -4,10 +4,11 @@ import startScreenCode
 import winScreenCode
 import loseScreenCode
 import os
-
+import turtleCode
 
 def main():
     os.system('cls')
+    turtleCode.safeDrawing()
     startScreen = startScreenCode.startScreen()
     startScreen.display()
     username = startScreen.start()
@@ -38,7 +39,7 @@ def main():
             main()
 
     # incorrect tries seems to be hardcoded here -ethan
-    elif questionScreen.incorrectTries == 4:
+    elif questionScreen.incorrectTries == 3:
         print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
         loseScreen = loseScreenCode.loseScreen()
         loseScreen.display()

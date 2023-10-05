@@ -43,7 +43,7 @@ class Screen:
     def restartOrQuit(self):
         while True:
             try:
-                choice = int(input("\n1 to restart, or 2 to quit: "))
+                choice = int(input("\nWould you like to: \n1) Restart \n2) Quit \n:  "))
                 if choice == 1:
                     return True
                 elif choice == 2:

@@ -33,7 +33,7 @@ class startScreen(baseScreen.Screen):
     def start(self):
         while True:
             try:
-                choice = int(input("\n1 to start, or 2 to quit: "))
+                choice = int(input("\nWould you like to: \n1) Start The Game\n2) Quit"))
                 if choice == 1:
                     name = str(input("Enter a name: "))
                     return name
@@ -43,7 +43,7 @@ class startScreen(baseScreen.Screen):
                 else:
                     print("Invalid Input")
             except Exception:
-                print("Not valid")
+                print("Invalid Input")
                 self.start()
 
     def display(self):
