@@ -27,7 +27,7 @@ class startScreen(baseScreen.Screen):
         
     def showLeaderboard(self) -> None:
         print("Leaderboard:")
-        for i in range(len(self.names)):
+        for i in range(10):
             print(f"{i + 1}. {self.names[i]} - {self.scores[i]}")
 
     def start(self):

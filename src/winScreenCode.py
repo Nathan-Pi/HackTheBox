@@ -57,7 +57,7 @@ class winScreen(baseScreen.Screen):
             print(f"An error occurred: {str(e)}")
 
     def generateScore(self, questionScreen):
-        self.score = (10 - getattr(questionScreen, 'incorrectTries')) * (getattr(questionScreen, 'difficulty'))
+        self.score = (10*(10 - getattr(questionScreen, 'incorrectTries')) * (getattr(questionScreen, 'difficulty')))
 
         
         return self.score
