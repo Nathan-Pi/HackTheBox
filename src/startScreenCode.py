@@ -8,7 +8,6 @@ class startScreen(baseScreen.Screen):
         baseScreen.Screen.__init__(self)
         self.leaderboard = []
         self.entries = entries
-        nameAndScore = []
         with open('assets/leaderboard.json', "r") as file:
             data = json.load(file)
         
