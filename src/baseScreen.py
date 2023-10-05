@@ -2,7 +2,7 @@ import json
 import os
 import random
 import time
-
+import playsound
 
 class Screen:
 
@@ -54,4 +54,3 @@ class Screen:
             except Exception:
                 print("Invalid Entry")
                 self.restartOrQuit()
-
