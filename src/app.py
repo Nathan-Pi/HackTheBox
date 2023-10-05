@@ -4,11 +4,18 @@ import winScreenCode
 import loseScreenCode
 import os
 import turtleCode
+import pygame
 
 
 def main():
+    path = os.getcwd()
+    file_path = os.path.join(path, 'assets', 'raveMusic.mp3')
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(file_path)
     os.system('cls')
-    startScreen = startScreenCode.startScreen()
+    startScreen = startScreenCode.startScreen(file_path)
+    pygame.mixer.music.play()
     startScreen.display()
     username = startScreen.start()
     score = 0
