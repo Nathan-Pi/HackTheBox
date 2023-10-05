@@ -43,7 +43,6 @@ class Screen:
 
     def restartOrQuit(self):
         while True:
-<<<<<<< HEAD
             choice = int(input("\n1 to restart, or 2 to quit: "))
             if choice == 1:
                 return True
@@ -53,20 +52,6 @@ class Screen:
                 quit()
             else:
                 print("Invalid Input")
-=======
-            try:
-                choice = int(input("\n1 to restart, or 2 to quit: "))
-                if choice == 1:
-                    return True
-                elif choice == 2:
-                    print("Quitting...")
-                    quit()
-                else:
-                    print("Invalid Input")
-            except Exception:
-                print("Invalid Entry")
-                self.restartOrQuit()
->>>>>>> 4c0c44a5ed9a3c85e460d554b982f0213676fb5c
 
     def playMusic(self):
         music = 'C:\\Users\\HannahManual\\Desktop\\HackTheBox\\src\\raveMusic.mp3'
