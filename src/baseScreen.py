@@ -2,6 +2,7 @@ import json
 import os
 import random
 import time
+from playsound import playsound
 
 
 class Screen:
@@ -47,7 +48,13 @@ class Screen:
                 return True
             elif choice == 2:
                 print("Quitting...")
+                self.playMusic()
                 quit()
             else:
                 print("Invalid Input")
 
+    def playMusic(self):
+        music = 'C:\\Users\\HannahManual\\Desktop\\HackTheBox\\src\\raveMusic.mp3'
+        playsound(music)
+              
+      

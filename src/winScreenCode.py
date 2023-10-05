@@ -2,11 +2,11 @@ import baseScreen
 import os
 import json
 import questionScreenCode
-
+from playsound import playsound
+import time
 class winScreen(baseScreen.Screen):
 
     def display(self):
-
         os.system('cls')
         print("""
  __     __          __          ___         _ 
@@ -36,8 +36,8 @@ class winScreen(baseScreen.Screen):
           You got a score of {self.score}!
               
               """)
-
-    
+        
+   
     def appendLeaderboard(self, name, score):
         new_entry = {
             "name": name,
@@ -59,5 +59,9 @@ class winScreen(baseScreen.Screen):
     def generateScore(self, questionScreen):
         self.score = (10 - getattr(questionScreen, 'incorrectTries')) * (getattr(questionScreen, 'difficulty'))
 
-        
+    
         return self.score
+    
+    
+        
+        

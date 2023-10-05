@@ -1,17 +1,19 @@
 import time
 import threading as th
-
 import baseScreen
 import questionScreenCode
 import startScreenCode
 import winScreenCode
 import timerr
 import loseScreenCode
-
+from playsound import playsound
 import os
 
 
 def main():
+   
+    
+
     os.system('cls')
     startScreen = startScreenCode.startScreen()
     startScreen.display()
@@ -51,4 +53,3 @@ def main():
 
 
 main()
-
