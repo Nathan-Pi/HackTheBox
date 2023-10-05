@@ -1,4 +1,3 @@
-import time
 import questionScreenCode
 import startScreenCode
 import winScreenCode
@@ -6,9 +5,9 @@ import loseScreenCode
 import os
 import turtleCode
 
+
 def main():
     os.system('cls')
-    turtleCode.safeDrawing()
     startScreen = startScreenCode.startScreen()
     startScreen.display()
     username = startScreen.start()
@@ -47,5 +46,5 @@ def main():
         main()
 
 
+turtleCode.safeDrawing()
 main()
-

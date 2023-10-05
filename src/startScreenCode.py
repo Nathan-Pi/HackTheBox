@@ -10,10 +10,10 @@ class startScreen(baseScreen.Screen):
         self.entries = entries
         with open('assets/leaderboard.json', "r") as file:
             data = json.load(file)
-        
+
         self.names = [entry['name'] for entry in data['leaderboard']]
         self.scores = [entry['score'] for entry in data['leaderboard']]
-        
+
         with open('assets/leaderboard.json', "r") as file:
             data = json.load(file)
         sorted_leaderboard = sorted(data["leaderboard"], key=lambda x: x["score"], reverse=True)
@@ -23,7 +23,6 @@ class startScreen(baseScreen.Screen):
         with open('assets/leaderboard.json', "w") as file:
             json.dump(sorted_data, file, indent=4)
 
-        
     def showLeaderboard(self) -> None:
         print("Leaderboard:")
         for i in range(10):
@@ -48,4 +47,3 @@ class startScreen(baseScreen.Screen):
     def display(self):
         super().display()
         self.showLeaderboard()
-
