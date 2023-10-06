@@ -45,7 +45,7 @@ def main():
             main()
 
     # incorrect tries seems to be hardcoded here -ethan
-    elif questionScreen.incorrectTries == 3:
+    elif questionScreen.incorrectTries == 4:
         print("The safe turned on its anti-bruteforce defense! You have to try hack the safe again!")
         loseScreen = loseScreenCode.loseScreen()
         loseScreen.display()
